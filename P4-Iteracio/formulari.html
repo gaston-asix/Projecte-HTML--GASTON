@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulari de Treballador</title>
+    <link rel="stylesheet" href="formulari.css">
+</head>
+<body>
+    <h1>Formulari per seleccionar un nou treballador</h1>
+    <form action="https://alumnat.cat/form" method="POST" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Informació Personal</legend>
+            <div class="form-grid">
+                <label for="nom">Nom:</label>
+                <input type="text" id="nom" name="nom" placeholder="Escriu el teu nom" required autofocus>
+                
+                <label for="cognoms">Cognoms:</label>
+                <input type="text" id="cognoms" name="cognoms" placeholder="Escriu els teus cognoms" required>
+                
+                <label for="edat">Edat:</label>
+                <input type="number" id="edat" name="edat" placeholder="Escriu la teva edat" min="18" required>
+                
+                <label for="dni">DNI:</label>
+                <input type="text" id="dni" name="dni" placeholder="00000000X" pattern="[0-9]{8}[A-Za-z]" required>
+                
+                <label for="color">Color preferit:</label>
+                <input type="color" id="color" name="color">
+                
+                <label for="mail">Email:</label>
+                <input type="email" id="mail" name="mail" placeholder="exemple@correu.com" required>
+                
+                <label for="estudis">Estudis:</label>
+                <select id="estudis" name="estudis" required>
+                    <option value="">Selecciona els teus estudis</option>
+                    <option value="primari">Primari</option>
+                    <option value="secundari">Secundari</option>
+                    <option value="universitari">Universitari</option>
+                    <option value="altre">Altres</option>
+                </select>
+                
+                <label for="sexe">Sexe:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="sexe" value="home" required> Home</label>
+                    <label><input type="radio" name="sexe" value="dona"> Dona</label>
+                    <label><input type="radio" name="sexe" value="altre"> Altre</label>
+                </div>
+                
+                <label for="explicacio">Explicació:</label>
+                <textarea id="explicacio" name="explicacio" rows="4" placeholder="Explica'ns més sobre tu"></textarea>
+                
+                <label for="foto">Fotografia:</label>
+                <input type="file" id="foto" name="foto" accept="image/*" required>
+                
+                <label for="privacitat">
+                    <input type="checkbox" id="privacitat" name="privacitat" required>
+                    Accepto la política de privacitat
+                </label>
+            </div>
+        </fieldset>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
